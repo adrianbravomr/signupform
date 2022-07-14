@@ -25,6 +25,7 @@ main{
     overflow: auto;
 }
 
+
 .cols{
     display: flex;
     height: 100%;
