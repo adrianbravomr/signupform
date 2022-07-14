@@ -42,17 +42,24 @@ main{
     width: 40%;
     min-width: 350px;
     transition: 0.5s;
+	-webkit-animation: fade-in 0.3s linear both;
+	animation: fade-in 0.5s linear both;
 }
 
-.logocol>div{
+div>span{
+    margin: 0px;
+    padding: 0px;
+}
+
+.logocol>div,div>span{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 8vw;
-    font-weight: bolder;
-    font-family: 'Impact';
+    font-size: 7vw;
+    font-weight: 900;
     line-height:0.7em;
+    letter-spacing: -10px;
     text-shadow: 0px 0px 20px black;
 }
 
@@ -72,30 +79,34 @@ img.bg{
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     box-shadow: 0px 0px 10px 8px rgba(0, 0, 0,0.5);
+	-webkit-animation: fade-in 0.3s linear both;
+	animation: fade-in 0.5s linear both;
 }
 
-button{
+#registerbutton{
+    position:relative;
     margin: 20px 0px 0px 50px;
-}
-
-form>button{
     height: 40px;
     width: 212px;
+}
+
+form>div>button{
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: absolute;
     font-weight: bolder;
     font-size: 18px;
     background-color: rgb(249, 208, 3);
     border: 0px solid white;
     border-radius: 5px;
+    transition: height 0.1s linear,top 0.1s linear;
 }
 
-form>button:hover{
-    transform: scale(1.1);
+form>div>button:hover{
+    top:-10%;
+    height: 130%;
     cursor: pointer;
-    transition: 0.2s;
-}
-
-form>button:not(:hover){
-    transition: 0.2s;
 }
 
 .signupcol>h1{
@@ -140,6 +151,7 @@ input:not(:placeholder-shown)+label{
 }
 
 fieldset>div>input{
+    opacity: 1;
     width: 100%;
     max-width: 220px;
     height: 30px;
@@ -147,29 +159,30 @@ fieldset>div>input{
     font-size: 14px;
     border-radius: 5px;
     border: 1px solid white;
+    background-position: 185px -50px;
+    transition: background-position 0.1s ease-in-out;
 }
 
 input:invalid:not(:placeholder-shown):not(:focus){
+    background: url('./images/wrong.svg');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 185px 5px;
     outline: 2px solid red;
     outline-offset: -2px;
-    background:pink;
-    transition: 0.2s;
+    background-color:pink;
 }
 
 input:valid:not(:placeholder-shown):not(:focus){
     background: url('./images/check.svg');
-    background-color:rgb(228, 255, 228);
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: 185px 5px;
+    background-color:rgb(228, 255, 228);
     outline: 2px solid lightgreen;
     outline-offset: -2px;
-    transition: 0.2s;
 }
 
-input:invalid:not(:focus):not(:placeholder-shown)~.requirements{
-    max-height: 200px;
-}
 
 .signupform{
     background-color: rgba(0,0,0,0.3);
@@ -210,9 +223,34 @@ footer>a{
 
 .requirements{
     font-size: 14px;
-    max-height: 0;
+    max-height: 0px;
+    height: 0%;
     transition: 0.28s;
     overflow: hidden;
     color: red;
     font-style: italic;
+    transition: height 0.3s ease-in-out,max-height 0.3s ease-in-out;
 }
+
+input:invalid:not(:focus):not(:placeholder-shown)~.requirements{
+    height: 100%;
+    max-height: 200px;
+}
+
+ @-webkit-keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
