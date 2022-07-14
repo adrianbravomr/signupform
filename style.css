@@ -20,7 +20,7 @@ main{
     display: flex;
     flex-direction: column;
     background-color: black;
-    background-image: url('/images/background.jpeg');
+    background-image: url('./images/background.jpeg');
     background-size: cover;
     overflow: auto;
 }
@@ -155,7 +155,7 @@ input:invalid:not(:placeholder-shown):not(:focus){
 }
 
 input:valid:not(:placeholder-shown):not(:focus){
-    background: url(images/check.svg);
+    background: url('./images/check.svg');
     background-color:rgb(228, 255, 228);
     background-size: 20px;
     background-repeat: no-repeat;
