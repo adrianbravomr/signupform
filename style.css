@@ -20,7 +20,7 @@ main{
     display: flex;
     flex-direction: column;
     background-color: black;
-    background-image: url('./images/background.jpeg');
+    background-image: url('./images/background.jpg');
     background-size: cover;
     overflow: auto;
 }
