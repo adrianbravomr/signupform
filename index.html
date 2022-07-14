@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Sign-up Form</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main>
+            <div class="cols">
+                <div class="logocol">
+                    <div>MADE<br>&nbsp;INSPACE</div>
+                </div>
+                <div class="signupcol">
+                    <h1 class="invitation">This is not a real online service.<br>
+                        <br>
+                        Prepare to embark on a journey to infinity and beyond!<br>
+                        Sign up <i>now</i> to get started.<br>
+                    </h1>
+                    <form action="/register" method="post">
+                        <div class="signupform">
+                            <h1>Let's go!</h1>
+                            <fieldset>
+                                <legend>About You</legend>
+                                <div>
+                                    <input type="text" name="firstname" id="firstnameform" placeholder=" " required>
+                                    <label for="firstnameform">First Name</label>
+                                </div>
+                                <div>
+                                    <input type="text" name="lastname" id="lastnameform" placeholder=" " required>
+                                    <label for="lastnameform">Last Name</label>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Contact Details</legend>
+                                <div>
+                                    <input type="email" name="email" id="emailform"  placeholder=" "required>
+                                    <label for="emailform">Email</label>
+                                    <div class="requirements">
+                                        Enter a valid email address
+                                    </div>
+                                </div>
+                                <div>
+                                    <input type="phone" name="phone" id="phoneform" pattern="^(\+\d{1,2})?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{3}$" placeholder=" " required>
+                                    <label for="phoneform">Phone Number</label>
+                                    <div class="requirements">
+                                        Enter a valid phone number with "+" simbol and region code, plus nine digits.
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Security</legend>
+                                <div>
+                                    <input type="password" name="password" id="passwordform" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" onChange="passwordPattern()" placeholder=" " required>
+                                    <label for="passwordform">Password</label>
+                                    <div class="requirements">
+                                        Your password must be at least 6 characters as well as contain at least one uppercase, one lowercase, and one number.
+                                    </div>
+                                </div>
+                
+                                <div>
+                                    <input type="password" name="confirmpassword" id="confirmpasswordform" placeholder=" " required>
+                                    <label for="confirmpasswordform">Confirm Password</label>
+                                    <div class="requirements">
+                                        Passwords do not match
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <button type="submit">Create Account</button>
+                    </form>
+                    <div class="login">
+                        Already have an account? <a href="">Log in</a>
+                    </div>
+                </div>
+            </div>
+            <footer>Created by Adrián Bravo, <a href="mailto:adrianbravomr@gmail.com">adrianbravomr@gmail.com</a>, <a href="https://github.com/adrianbravomr/signupform">Source Code</a>. Background by <a href="https://unsplash.com/photos/LyiuOfvh_8Y">Daniele Levis</a></footer>
+        </main>
+        <script src="scripts.js" async defer></script>
+    </body>
+</html>
